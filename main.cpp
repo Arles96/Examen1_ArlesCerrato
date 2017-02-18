@@ -28,7 +28,7 @@ int main()
 		cout<<"5. Ejercito Lannister" << endl;
 		cout<<"6. Ejercito Targaryen" << endl;
 		cout<<"7. Simulacion de batalla " << endl;
-		cout<<"Ingrese una opcion: " << endl;
+		cout<<"Ingrese una opcion: ";
 		cin>>opcion;
 		while (opcion<1 || opcion>7){
 			cout<<"Error en la opcion" << endl;
@@ -128,7 +128,7 @@ int main()
 				cin>>opcion2;
 			}
 			if (opcion2==1){
-				FamiliasNobles* f;
+				FamiliasNobles* f = new FamiliasNobles();
 				string nombre, escudo, lema;
 				int cantidad;
 				double ataque, defensa;
@@ -172,7 +172,7 @@ int main()
 		if (opcion==5 && cl==1){
 			int opcion2;
 			cout<<"MENU" << endl;
-			cout<<"1. Agregar guardia familia" << endl;
+			cout<<"1. Agregar guardia real" << endl;
 			cout<<"2. Listar guardias reales" << endl;
 			cout<<"3. Eliminar guardias" << endl;	
 			cout<<"Ingrese una opcion: " << endl;
@@ -183,7 +183,7 @@ int main()
 				cin>>opcion2;
 			}
 			if (opcion2==1){
-				GuardiaReal* g;
+				GuardiaReal* g = new GuardiaReal();
 				string nombre;
 				int edad;
 				double ataque, defensa;
@@ -233,7 +233,7 @@ int main()
 				cin>>opcion2;
 			}
 			if (opcion2==1){
-				Dothraki* d;
+				Dothraki* d= new Dothraki();
 				string nombre, jefe, caballo, color;
 				double ataque, defensa;
 				cout<<"Ingrese el nombre: ";
