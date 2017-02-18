@@ -80,3 +80,8 @@ void Targaryen::setBarcos(int b)
 {
 	barcos = b;
 }
+
+void Targaryen::EliminarDothraki(int i)
+{
+	dothraki.erase(dothraki.begin()+i);
+}

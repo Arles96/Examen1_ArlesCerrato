@@ -35,6 +35,7 @@ class Targaryen
 		void setDragones(int);
 		void addDothraki(Dothraki*);
 		void setBarcos(int);
+		void EliminarDothraki(int);
 };
 
 #endif

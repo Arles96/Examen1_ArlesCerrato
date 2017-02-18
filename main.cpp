@@ -59,7 +59,7 @@ int main()
 			cs++;
 			cout<<"Se ha agregadp el starks" << endl;
 		}
-		else {
+		else if (opcion==1 && cs==1) {
 			cout<<"Ya existe un stark" << endl;
 		}
 		if (opcion==2 && cl==0){
@@ -87,7 +87,7 @@ int main()
 			cl++;
 			cout<<"Se ha agregado un lannister" << endl;	
 		}
-		else {
+		else if (opcion==2 && cl==1){
 			cout<<"Ya existe un lannister" << endl;
 		}
 		if (opcion==3 && ct==0){
@@ -111,10 +111,10 @@ int main()
 			ct++;
 			cout<<"Se ha registrado el Targaryen" << endl;
 		}
-		else {
+		else if (opcion==3 && ct==1){
 			cout<<"Ya existe un Targaryen" << endl;
 		}
-		if (opcion==4){
+		if (opcion==4 && cs==1){
 			int opcion2;
 			cout<<"MENU" << endl;
 			cout<<"1. Agregar Familia nomble" << endl;
@@ -160,14 +160,16 @@ int main()
 				cout<< endl;
 			}
 			else if (opcion2==3){
-				//TODO; eliminar y hacer retinar el vector en Starks
 				int eliminar;
 				cout<<"Ingrese la posicion a eliminar: ";
 				cin>>eliminar;
-				//delete s.getFamiliaNoble(i);
+				s.EliminarNobles(eliminar);
 			}
 		}
-		if (opcion==5){
+		else if (opcion==4 && cs==0){
+			cout<<"Error no hay un Starks" << endl;
+		}
+		if (opcion==5 && cl==1){
 			int opcion2;
 			cout<<"MENU" << endl;
 			cout<<"1. Agregar guardia familia" << endl;
@@ -211,7 +213,64 @@ int main()
 				int eliminar;
 				cout<<"Ingrese la posicion para eliminar: ";
 				cin>>eliminar;
+				l.EliminarGuardia(eliminar);
 			}
+		}
+		else if (opcion==5 && cl==0){
+			cout<<"Error no hay un lannister" << endl;
+		}
+		if (opcion==6 && ct==1){
+			int opcion2;
+			cout<<"MENU" << endl;
+			cout<<"1. Agregar dothraki" << endl;
+			cout<<"2. Listar dothraki" << endl;
+			cout<<"3. Eliminar dothraki" << endl;
+			cout<<"Ingrese una opcion: ";
+			cin>>opcion2;
+			while (opcion2<1 || opcion2>3){
+				cout<<"Error en la opcion" << endl;
+				cout<<"Ingrese una opcion: " ;
+				cin>>opcion2;
+			}
+			if (opcion2==1){
+				Dothraki* d;
+				string nombre, jefe, caballo, color;
+				double ataque, defensa;
+				cout<<"Ingrese el nombre: ";
+				cin>>nombre;
+				cout<<"Ingrese el nombre del jefe barbaro: ";	
+				cin>>jefe;
+				cout<<"Ingrese el nombre del caballo: ";
+				cin>> caballo;
+				cout<<"Ingrese el color del caballo: ";
+				cin>>color;
+				cout<<"Ingrese el ataque: ";
+				cin>>ataque;
+				cout<<"Ingrese la defensa: ";
+				cin>>defensa;
+				d->setNombre(nombre);
+				d->setJefeBarbaro(jefe);
+				d->setNombreCaballo(caballo);
+				d->setColorCaballo(color);
+				d->setAtaque(ataque);
+				d->setDefensa(defensa);
+				t.addDothraki(d);
+			}
+			else if(opcion2==2){
+				for (int i=0; i<t.getCantidadDothraki();i++){
+					cout<< i << " " << t.getDothraki(i)->getNombre() << endl;
+				}
+				cout<< endl;
+			}
+			else if (opcion2==3){
+				int eliminar;
+				cout<<"Ingrese la posicion para eliminar: ";
+				cin>>eliminar;
+				t.EliminarDothraki(eliminar);
+			}
+		}
+		else if (opcion==5 && ct==0){
+			cout<<"Error no hay un targaryen" << endl;
 		}
 		cout<<"Desea continuar [s/n]: ";
 		cin>>respuesta;		
