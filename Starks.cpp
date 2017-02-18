@@ -95,3 +95,8 @@ int Starks::getCantidadNobles()
 {
 	return nobles.size();
 }
+
+void Starks::EliminarNobles(int i)
+{
+	nobles.erase(nobles.begin()+i);
+}

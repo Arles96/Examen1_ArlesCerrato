@@ -38,6 +38,7 @@ class Lannister
 		void setDinero(double);
 		void setFuerzaMontana(int);
 		void setCantidadIntegrantes(int);
+		void EliminarGuardia(int);
 };
 
 #endif

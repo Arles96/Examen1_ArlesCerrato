@@ -94,3 +94,7 @@ void Lannister::setCantidadIntegrantes(int i)
 	cantidadIntegrantes = i;
 }
 
+void Lannister::EliminarGuardia(int i)
+{
+	guardias.erase(guardias.begin()+i);
+}

@@ -39,6 +39,7 @@ class Starks
 		void setCantidadIntegrantes(int);
 		//Funcion para la cantidad de guerreros
 		int getCantidadNobles();
+		void EliminarNobles(int);
 };
 
 #endif 

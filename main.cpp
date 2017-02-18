@@ -164,7 +164,7 @@ int main()
 				int eliminar;
 				cout<<"Ingrese la posicion a eliminar: ";
 				cin>>eliminar;
-				delete s.getFamiliaNoble(i);
+				//delete s.getFamiliaNoble(i);
 			}
 		}
 		if (opcion==5){
