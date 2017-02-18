@@ -272,6 +272,29 @@ int main()
 		else if (opcion==5 && ct==0){
 			cout<<"Error no hay un targaryen" << endl;
 		}
+		if (opcion==6 && cs==1 && cl==1 && ct==1){
+			//variables de participantes
+			int p1, p2;
+			cout<<"MENU" << endl;
+			cout<<"1. Starks" << endl;
+			cout<<"2. Lannister " << endl;
+			cout<<"3. Targaryen" << endl;
+			cout<<"Ingrese el participante 1: ";
+			cin>>p1;
+			cout<<"Ingrese el participante 2: ";
+			cin>>p2;
+			//Controlador de turno
+			int turno=0;
+			if (p1==p2){
+				cout<<"Error no puede comenzar la batalla, elija dos clanes diferentes" << endl;
+			}
+			//Acumuladorres
+			double part1=0;
+			double part2=0;
+			/*if ((p1==1 && p2==2) || ()){
+
+			}*/
+		}
 		cout<<"Desea continuar [s/n]: ";
 		cin>>respuesta;		
 	}
