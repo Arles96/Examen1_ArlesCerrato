@@ -155,9 +155,62 @@ int main()
 			}
 			else if(opcion2==2){
 				for (int i = 0; i<s.getCantidadNobles();i++){
-					cout<< s.getFamiliaNoble(i)->getNombre() << endl;
+					cout<< i <<" " <<s.getFamiliaNoble(i)->getNombre() << endl;
 				}
 				cout<< endl;
+			}
+			else if (opcion2==3){
+				//TODO; eliminar y hacer retinar el vector en Starks
+				int eliminar;
+				cout<<"Ingrese la posicion a eliminar: ";
+				cin>>eliminar;
+				delete s.getFamiliaNoble(i);
+			}
+		}
+		if (opcion==5){
+			int opcion2;
+			cout<<"MENU" << endl;
+			cout<<"1. Agregar guardia familia" << endl;
+			cout<<"2. Listar guardias reales" << endl;
+			cout<<"3. Eliminar guardias" << endl;	
+			cout<<"Ingrese una opcion: " << endl;
+			cin>>opcion2;
+			while (opcion2<1 || opcion2>3){
+				cout<<"Error en la opcion" << endl;
+				cout<<"Ingrese una opcion: " ;
+				cin>>opcion2;
+			}
+			if (opcion2==1){
+				GuardiaReal* g;
+				string nombre;
+				int edad;
+				double ataque, defensa;
+				cout<<"Ingrese el nombre: ";
+				cin>>nombre;
+				cout<<"Ingrese la edad: ";
+				cin>>edad;
+				g->setTipoSoldado();
+				cout<<"Ingrese el ataque: ";
+				cin>>ataque;
+				cout<<"Ingrese la defensa: ";
+				cin>>defensa;
+				g->setNombre(nombre);
+				g->setAtaque(ataque);
+				g->setEdad(edad);
+				g->setDefensa(defensa);
+				l.addGuardiaReal(g);
+				cout<<"Se ha registrado el guardia real" << endl;
+			}
+			else if(opcion2==2){
+				for (int i=0; i<l.getCantidadGuardias();i++){
+					cout<< i << " " << l.getGuardiaReal(i)->getNombre();
+				}
+				cout<< endl;
+			}
+			else if (opcion2==3){
+				int eliminar;
+				cout<<"Ingrese la posicion para eliminar: ";
+				cin>>eliminar;
 			}
 		}
 		cout<<"Desea continuar [s/n]: ";
